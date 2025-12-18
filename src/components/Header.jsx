@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,12 +68,59 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white">
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-navy border-t border-white/10">
+            <div className="px-6 py-4 space-y-4">
+              <button
+                onClick={() => {
+                  scrollToSection('hometest')
+                  setIsMenuOpen(false)
+                }}
+                className="block w-full text-left text-white hover:text-accent transition-colors duration-200 font-medium"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('services')
+                  setIsMenuOpen(false)
+                }}
+                className="block w-full text-left text-white hover:text-accent transition-colors duration-200 font-medium"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('how-to-book')
+                  setIsMenuOpen(false)
+                }}
+                className="block w-full text-left text-white hover:text-accent transition-colors duration-200 font-medium"
+              >
+                How to Book
+              </button>
+              <button
+                onClick={() => {
+                  scrollToSection('contact')
+                  setIsMenuOpen(false)
+                }}
+                className="block w-full text-left text-white hover:text-accent transition-colors duration-200 font-medium"
+              >
+                Contact
+              </button>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   )
