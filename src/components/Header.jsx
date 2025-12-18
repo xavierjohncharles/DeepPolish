@@ -28,8 +28,12 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-              <span className="text-navy font-bold text-xl">DP</span>
+            <div className="w-10 h-10 rounded-full overflow-hidden bg-accent flex items-center justify-center">
+              <img
+                src="/images/deeplogo.jpg"
+                alt="Deep Polish logo"
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-xl font-bold text-white">Deep Polish</span>
           </div>
@@ -37,7 +41,7 @@ const Header = () => {
           {/* Menu Items */}
           <div className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection('home')}
+              onClick={() => scrollToSection('hometest')}
               className="text-white hover:text-accent transition-colors duration-200 font-medium"
             >
               Home

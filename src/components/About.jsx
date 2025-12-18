@@ -29,7 +29,7 @@ const About = () => {
           {/* Right Side - Content */}
           <div className="order-1 md:order-2 space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Who Are We?
+              Who Are We? 
             </h2>
             <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>

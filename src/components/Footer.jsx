@@ -19,8 +19,12 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-                <span className="text-navy font-bold text-xl">DP</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden bg-accent flex items-center justify-center">
+                <img
+                  src="/images/deeplogo.jpg"
+                  alt="Deep Polish logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-xl font-bold text-white">Deep Polish</span>
             </div>
