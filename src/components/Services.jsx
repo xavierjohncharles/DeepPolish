@@ -11,52 +11,48 @@ const SparkleIcon = () => (
   </svg>
 )
 
-const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-navy border border-accent/20 rounded-2xl p-8 hover:border-accent/50 transition-all duration-300 hover:shadow-xl hover:shadow-accent/10">
-    <div className="flex items-center space-x-4 mb-4">
-      <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
-        {icon}
-      </div>
-      <h3 className="text-2xl font-bold text-white">{title}</h3>
+const ServiceCard = ({ imagePath, imageAlt }) => {
+  return (
+    <div className="bg-navy rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-accent/20 transition-all duration-300 border border-accent/20">
+      {/* Image */}
+      <img
+        src={imagePath}
+        alt={imageAlt}
+        className="w-full h-[320px] md:h-[450px] object-cover object-top"
+      />
     </div>
-    <p className="text-gray-300 leading-relaxed">{description}</p>
-  </div>
-)
+  )
+}
 
 const Services = () => {
   const services = [
     {
-      icon: <SparkleIcon />,
       title: 'Deep Cleaning',
-      description: 'Comprehensive deep cleaning service that reaches every corner of your home. Perfect for spring cleaning or when you need that extra level of detail.',
+      description:
+        'Comprehensive deep cleaning service that reaches every corner of your home. Perfect for spring cleaning or when you need that extra level of detail.',
+      imagePath: '/images/our-services/Services4.PNG',
+      imageAlt: 'Deep cleaning service',
     },
     {
-      icon: (
-        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-        </svg>
-      ),
       title: 'Airbnb & Holiday Let',
-      description: 'Professional cleaning service tailored for short-term rentals. Ensure your property is guest-ready with our thorough and efficient cleaning.',
+      description:
+        'Professional cleaning service tailored for short-term rentals. Ensure your property is guest-ready with our thorough and efficient cleaning.',
+      imagePath: '/images/our-services/Services1.PNG',
+      imageAlt: 'Airbnb and holiday let cleaning',
     },
     {
-      icon: (
-        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-      ),
-      title: 'Move In / Move Out',
-      description: 'Complete cleaning service for when you\'re moving. We ensure your old or new home is spotless, making your transition smooth and stress-free.',
+      title: 'Move in / Move out',
+      description:
+        "Complete cleaning service for when you're moving. We ensure your old or new home is spotless, making your transition smooth and stress-free.",
+      imagePath: '/images/our-services/Services2.PNG',
+      imageAlt: 'Move in and move out cleaning',
     },
     {
-      icon: (
-        <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
       title: 'Home Maintenance',
-      description: 'Regular maintenance cleaning to keep your home in perfect condition. Customizable schedules to fit your lifestyle and needs.',
+      description:
+        'Regular maintenance cleaning to keep your home in perfect condition. Customizable schedules to fit your lifestyle and needs.',
+      imagePath: '/images/our-services/Services3.PNG',
+      imageAlt: 'Home maintenance cleaning',
     },
   ]
 
@@ -76,9 +72,8 @@ const Services = () => {
           {services.map((service, index) => (
             <ServiceCard
               key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
+              imagePath={service.imagePath}
+              imageAlt={service.imageAlt}
             />
           ))}
         </div>

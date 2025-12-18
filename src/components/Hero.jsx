@@ -53,24 +53,19 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Side - Image */}
+          {/* Right Side - Video */}
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="/images/booking-steps/WHO ARE WE.zip -  (2).PNG"
-                alt="Deep Polish Cleaning Service"
-                className="w-full h-auto object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none'
-                  e.target.nextSibling.style.display = 'flex'
-                }}
-              />
-              <div
-                className="hidden w-full h-96 bg-gradient-to-br from-accent/20 to-navy items-center justify-center rounded-3xl"
-                style={{ display: 'none' }}
+            <div className="rounded-3xl overflow-hidden shadow-2xl aspect-video">
+              <video
+                src="/videos/hero.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
               >
-                <span className="text-accent text-2xl">Hero Image</span>
-              </div>
+                Your browser does not support the video tag.
+              </video>
             </div>
             {/* Decorative sparkles */}
             <div className="absolute -top-4 -right-4 text-accent opacity-50">
